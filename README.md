@@ -14,6 +14,7 @@ This project combines a GPS and 9-DOF IMU using a Arduino Teensy 3.1. The main c
 * [Teensy 3.1 Development Board](https://www.pjrc.com/store/teensy32.html)
 
 Here is a picture of the hardware setup with a basic breadboard. A Raspberry Pi is include in the image for size reference.
+
 <img src="https://github.com/mwhannan74/Arduino-GPS-aided-AHRS/blob/main/hardware/breadboard.jpg" width="500"/>
 
 ## IMU
