@@ -243,7 +243,11 @@ void setupIMU()
   bno.setExtCrystalUse(true); 
   delay(500);
 
+  //*****************************************************************************************
+  // For a fast calibration, uncomment this line and use the most recently saved calibration.
+  // You will still need to calibrate the magnetometers by mvoing it around.
   loadImuCalibration();
+  //*****************************************************************************************
 
   while( !IMU.isCalibrated )
   {
@@ -327,7 +331,8 @@ uint32_t timeLED_ms = millis();
 uint32_t timeFusion_ms = millis();
 uint32_t timePrint_ms = millis();
 
-float Kn_bias = 0.2;
+// The smaller Kn_bias the less new measurements are included in the fusion
+float Kn_bias = 0.2; // must be 0.0 < Kn_bias < 1.0 
 float Ko_bias = 1.0 - Kn_bias;
 
 struct
