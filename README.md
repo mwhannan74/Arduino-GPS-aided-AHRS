@@ -19,6 +19,8 @@ The IMU is based on the BNO055 AHRS. It uses an Kalamn Filter (EKF) to compute t
 ## Heading Fusion
 It may be more precise to call it "IMU heading bias correction." The problem with the IMU's magnetometer-based heading is that it's not accurate to true north due to [magnetic declination](https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml#declination). It is however very stable even when stationary (no drift). The GPS returns very accurate true north heading, but only when going faster than about 2 m/s. When stationary, the GPS heading is not defined and will vary dramatically from the actual. I have implemented a simple approach that updates the magnitometer bias (offset from true north) based on GPS heading when going fast enough. The benefit of this approach is the pose heading is updated at the rate of the orienation sensor (up to 100Hz), and only updates the bias (error) estimate of the magnetometer when GPS heading (RMC sentence) is available (1,5,10 Hz).
 
+You can "tune" how much the NEW GPS-based heading is averaged into the current estimated bias using Kn_bias. The smaller Kn_bias the less new measurements are included in the fusion.
+
 Note, that I have not addressed the issue of going backwards with the GPS. **The magnetometer measures the direction the sensor is facing. The GPS measures the direction the sesnor is moving (course over ground - COG).** Right now it attempts to not update the heading bias when it thinks it is going backwards, but I have not dealt with the issue of the IMU and GPS having opposite directions.
 
 ## Serial Monitor
@@ -27,3 +29,4 @@ I use the serial monitor for all debuging and data logging. Set **bool DEBUG = t
 
 ## Results
 My intial testing has proved pretty good. Below you will see a plot of the fused, GPS, and IMU heading.
+![results](https://github.com/mwhannan74/Arduino-GPS-aided-AHRS/blob/main/results/arduino_GPS_AHRS_data_collect_9-18-22.JPG)
