@@ -13,6 +13,10 @@ This is a personal project that I put together that combines a GPS and 9-DOF IMU
   * [IMU Library Install](https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/arduino-code)
 * [Teensy 3.1 Development Board](https://www.pjrc.com/store/teensy32.html)
 
+Here is a picture of the hardware setup with a basic breadboard. A Raspberry Pi is include in the image for size reference.
+![hardware](https://github.com/mwhannan74/Arduino-GPS-aided-AHRS/blob/main/hardware/breadboard.jpg)
+
+
 ## IMU
 The IMU is based on the BNO055 AHRS. It uses an Kalamn Filter (EKF) to compute the full 3D orientation of the sensor (you don't have to do this yourself!). You can find my Arduino project for interfacing and calibrating this sensor [here](https://github.com/mwhannan74/Adafruit_BNO055_OrientSensor). That project will allow you to save the calibration and load it at start up. However, you will still need to calibrate the magnetometers on power cycle, but that is super easy (if you can pick your device up) by just moving it back and forth and up and down a little. You should also watch the [Bosch YouTube video](https://www.youtube.com/watch?v=Bw0WuAyGsnY) to understand how the calbration works. My design for this project is to load the values because calibrating the accelerometers is a pain.
 
