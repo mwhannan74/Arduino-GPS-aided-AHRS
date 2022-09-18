@@ -35,8 +35,10 @@ I use the serial monitor for all debuging and data logging. Set **bool DEBUG = t
 * time_sec, lat_deg, lon_deg, speed_mps, heading_deg, pitch_deg, roll_deg, gps_hdg, imu_hdg, imu_hdg_error, imu_hdg_bias, gpsFixQual, numSat
 
 ## Results
-My intial testing has proven to be pretty good. The data below is located in he results folder. The images are created from the figures in the MS Excel file.
+My intial testing has proven to be pretty good. The data below is located in he results folder. The images are created from the figures in the MS Excel file. Note the drop in speed below 2m/s from 187s-214s where the heading bias stays constant.
 ### Heading
-![results](https://github.com/mwhannan74/Arduino-GPS-aided-AHRS/blob/main/results/arduino_GPS_AHRS_data_collect_9-18-22.JPG)
+![heading plot](https://github.com/mwhannan74/Arduino-GPS-aided-AHRS/blob/main/results/arduino_GPS_AHRS_data_collect_9-18-22.JPG)
 ### Bias
-![results](https://github.com/mwhannan74/Arduino-GPS-aided-AHRS/blob/main/results/arduino_GPS_AHRS_data_collect_bias_9-18-22.JPG)
+![bias plot](https://github.com/mwhannan74/Arduino-GPS-aided-AHRS/blob/main/results/arduino_GPS_AHRS_data_collect_bias_9-18-22.JPG)
+### Speed
+![speed plot](https://github.com/mwhannan74/Arduino-GPS-aided-AHRS/blob/main/results/arduino_GPS_AHRS_data_collect_speed_9-18-22.JPG)
