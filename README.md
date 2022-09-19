@@ -1,10 +1,10 @@
 # Arduino-GPS-aided-AHRS
-An Arduino based GPS-Aided Attitude Heading Reference System (AHRS). Outputs lat, lon, speed, true north heading (static and dynamic), roll, pitch, GPS fix, and number of GPS satellites.
+An Arduino based GPS-Aided Attitude Heading Reference System (AHRS). Outputs lat, lon, speed, true north heading (under static and dynamic conditions), roll, pitch, GPS fix, and number of GPS satellites.
 
 This project combines a GPS and 9-DOF IMU using a Arduino Teensy 3.1. The main contributions of this work are:
 1. Interface to GPS.
 2. Interface to IMU.
-3. "Fusion" of IMU heading with GPS heading  (more details below)
+3. "Fusion" of IMU heading and GPS heading to deal with the issue of bias in the IMU heading and lack of heading at low speeds of the GPS.
 
 ## The hardware components of the design are:
 * [Adafruit Ultimate GPS Breakout with GLONASS + GPS - PA1616D - 99 channel w/10 Hz updates](https://www.adafruit.com/product/5440)
